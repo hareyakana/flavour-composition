@@ -85,7 +85,7 @@ data5 = load_sample_heatmap_data5()
 #T110=[]
 #w110=[]
 #    
-#with open('heatmap110i.txt','r')as f:
+#with open('heatmap110.txt','r')as f:
 #    reader = csv.DictReader(f)
 #    for row in reader:
 #        E110.append(float("%.3f" % float(row['x'])))
@@ -158,7 +158,7 @@ ice2=[(0.18,0.41,0.41)]
 figure, d=t.figure(scale=scale)
 d.boundary(linewidth=2)
 d.gridlines(multiple=100,color="blue",linewidth=0.2)
-d.set_title(r"source flavour composition ")
+d.set_title(r"source flavour composition ",fontsize=20)
 d.left_axis_label(r"$\nu_\tau$",offset=0.12,fontsize=20)
 d.right_axis_label(r"$\nu_\mu$",offset=0.1,fontsize=20)
 d.bottom_axis_label(r"$\nu_e$",offset=0,fontsize=20)
@@ -231,7 +231,7 @@ p.axis('off')
 """heatmap"""
 
 
-d.heatmap(data1,style="hexagonal",cmap='plasma',colorbar=True)
+cax = d.heatmap(data1,style="hexagonal",cmap='plasma',colorbar=True)
 #d.scatter(point1, marker='*', color='black', alpha=1, 
 #          label=r"$(\frac{1}{2},\frac{1}{2},0)$",s=50)
 #
@@ -251,5 +251,4 @@ d.heatmap(data5,style="hexagonal",cmap='plasma',colorbar=None)
 #d.scatter(democratic,marker='+',color='black',
 #          label=r"$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$",s=100)
 #d.resize_drawing_canvas(scale=1.15)
-
-d.show()
+#figure.colorbar(ax='bottom',mappable=None)

@@ -40,7 +40,7 @@ sig=[]
 CP=(r.uniform(-180,180))*m.pi/180.0
 
 """iteration"""
-N=50000
+N=20000
 
 """source ratio"""#keep ES+MS+TS=1
 ES110=1/2 #110
@@ -100,7 +100,7 @@ data5=[]
 
 for i in range(N):
     t12.append(r.gauss(T12,sig12down))
-    t23.append(45*m.pi/180)
+    t23.append(r.gauss(T23,sig23up))
     t13.append(r.gauss(T13,sig13up))
     sig.append((r.uniform(-180,180))*m.pi/180.0)
     Ue1.append(c(t12[i])*c(t13[i])*c(t12[i])*c(t13[i])) #matrix U element, probability amplitude
@@ -233,28 +233,28 @@ d.show()
 
 #
 """wriitng into files"""
-with open('110fixed23.txt', 'w') as f:
+with open('110txt', 'w') as f:
     fieldnames = ['x', 'y','z']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
 
     writer.writeheader()
     for i in range(len(data1)):
         writer.writerow({'x': E110[i], 'y': M110[i],'z':T110[i]})
-with open('100fixed23.txt', 'w') as f:
+with open('100.txt', 'w') as f:
     fieldnames = ['x', 'y','z']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
 
     writer.writeheader()
     for i in range(len(data1)):
         writer.writerow({'x': E100[i], 'y': M100[i],'z':T100[i]})
-with open('120fixed23.txt', 'w') as f:
+with open('120.txt', 'w') as f:
     fieldnames = ['x', 'y','z']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
 
     writer.writeheader()
     for i in range(len(data1)):
         writer.writerow({'x': E120[i], 'y': M120[i],'z':T120[i]})
-with open('010fixed23.txt', 'w') as f:
+with open('010.txt', 'w') as f:
     fieldnames = ['x', 'y','z']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
 
@@ -262,7 +262,7 @@ with open('010fixed23.txt', 'w') as f:
     for i in range(len(data1)):
         writer.writerow({'x': E010[i], 'y': M010[i],'z':T010[i]})
 
-with open('210fixed23.txt', 'w') as f:
+with open('210.txt', 'w') as f:
     fieldnames = ['x', 'y','z']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
 
