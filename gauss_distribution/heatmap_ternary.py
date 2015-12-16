@@ -10,7 +10,7 @@ import os
 import csv
 
 
-scale=1000
+scale=400
 
 """Loads sample heatmap data."""
 def load_sample_heatmap_data1(filename="heatmap110.txt"):
@@ -157,7 +157,7 @@ ice2=[(0.18,0.41,0.41)]
 """ternary settings"""
 figure, d=t.figure(scale=scale)
 d.boundary(linewidth=2)
-d.gridlines(multiple=100,color="blue",linewidth=0.2)
+d.gridlines(multiple=scale/10,color="blue",linewidth=0.2)
 d.set_title(r"source flavour composition ",fontsize=20)
 d.left_axis_label(r"$\nu_\tau$",offset=0.12,fontsize=20)
 d.right_axis_label(r"$\nu_\mu$",offset=0.1,fontsize=20)
@@ -231,23 +231,23 @@ p.axis('off')
 """heatmap"""
 
 
-cax = d.heatmap(data1,style="hexagonal",cmap='plasma',colorbar=True)
+d.heatmap(data1,style="hexagonal",cmap='plasma',colorbar=True)
 #d.scatter(point1, marker='*', color='black', alpha=1, 
 #          label=r"$(\frac{1}{2},\frac{1}{2},0)$",s=50)
 #
-d.heatmap(data2,style='hexagonal',cmap='plasma',colorbar=None)
+#d.heatmap(data2,style='hexagonal',cmap='plasma',colorbar=None)
 #d.scatter(point2, marker='*', color='black', alpha=1, 
 #          label=r"$(1,0,0)$",s=50)
 #          
-d.heatmap(data3,style="hexagonal",cmap='plasma',colorbar=None)
+#d.heatmap(data3,style="hexagonal",cmap='plasma',colorbar=None)
 #d.scatter(point3, marker='*', color='black', alpha=1, 
 #          label=r"$(\frac{1}{3},\frac{2}{3},0)$",s=50)
           
-d.heatmap(data4,style="hexagonal",cmap='plasma',colorbar=None)                
+#d.heatmap(data4,style="hexagonal",cmap='plasma',colorbar=None)                
 #d.scatter(point4, marker='*', color='black', alpha=1, 
 #          label=r"$(0,1,0)$",s=50)
           
-d.heatmap(data5,style="hexagonal",cmap='plasma',colorbar=None)
+#d.heatmap(data5,style="hexagonal",cmap='plasma',colorbar=None)
 #d.scatter(democratic,marker='+',color='black',
 #          label=r"$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$",s=100)
 #d.resize_drawing_canvas(scale=1.15)

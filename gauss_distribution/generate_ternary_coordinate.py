@@ -5,37 +5,23 @@ Created on Thu Dec  3 20:09:16 2015
 @author: hareyakana
 """
 import csv
+import itertools
 
-grid=1000
-b=[]
-r=[]
-l=[]
-
-P1=[]
-P2=[]
-P3=[]
-for i in range(grid+1):
-    P1.append(i/grid)
-    P2.append(i/grid)
-    P3.append(i/grid)
-
+grid=400
+P1=[i/grid for i in range(grid+1)]
+epsilon = 0.001
 
 x=[]
 y=[]
 z=[]
-dump=[]
+coords = [x,y,z]
 
-for i in range(grid+1):
-    for j in range(grid+1):
-        for k in range(grid+1):
-            if P1[i]+P2[j]+P3[k]==1:
-                x.append(P1[i])
-                y.append(P2[j])
-                z.append(P3[k])
-            else:
-                dump.append(1)
+for vals in itertools.product(P1, P1, P1):
+    if abs(sum(vals)-1) >= epsilon: continue  # this epsilon value will correct for the variations due to floating point arithmetic
+    for L,v in zip(coords, vals): L.append(v)
+print(len(z))            
 
-with open('ternary_coordinate1000.txt', 'w') as f:
+with open('ternary_coordinate%s.txt' %int(grid), 'w') as f:
     fieldnames = ['x', 'y','z']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
 

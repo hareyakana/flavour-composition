@@ -40,7 +40,7 @@ sig=[]
 CP=(r.uniform(-180,180))*m.pi/180.0
 
 """iteration"""
-N=10000
+N=20000
 
 """source ratio"""#keep ES+MS+TS=1
 ES110=1/2 #110

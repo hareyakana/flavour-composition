@@ -10,7 +10,7 @@ import os
 import csv
 
 
-scale=1000
+scale=100
 
 """Loads sample heatmap data."""
 def load_sample_heatmap_data1(filename="heatmap110.txt"):

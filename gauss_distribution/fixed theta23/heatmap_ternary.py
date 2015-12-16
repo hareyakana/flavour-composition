@@ -10,7 +10,7 @@ import os
 import csv
 
 
-scale=1000
+scale=400
 
 """Loads sample heatmap data."""
 def load_sample_heatmap_data1(filename="heatmap110.txt"):
@@ -145,14 +145,14 @@ data5 = load_sample_heatmap_data5()
 #        T210.append(float("%.3f" % float(row['z'])))
 #        w210.append(float("%.3f" % float(row['w'])))
 
-point1=[(0.3980599331366308,0.3112164005027349,0.2907236663606344)]
-point2=[(0.34669820676138435,0.3336302826666826,0.31967151057193305)]
-point3=[(0.55214511226237,0.24397475401089158,0.20388013372673847)]
-point4=[(0.24397475401089158,0.3784580469945782,0.3775671989945304)]
-democratic=[(1/3,1/3,1/3)]
-point5=[(0.4494216595118771,0.2888025183387871,0.26177582214933576)]
-ice1=[(0,0.2,0.8)]
-ice2=[(0.18,0.41,0.41)]
+point1=[(scale*0.3980599331366308,scale*0.3112164005027349,scale*0.2907236663606344)]
+point2=[(scale*0.34669820676138435,scale*0.3336302826666826,scale*0.31967151057193305)]
+point3=[(scale*0.55214511226237,scale*0.24397475401089158,scale*0.20388013372673847)]
+point4=[(scale*0.24397475401089158,scale*0.3784580469945782,scale*0.3775671989945304)]
+democratic=[(scale*1/3,scale*1/3,scale*1/3)]
+point5=[(scale*0.4494216595118771,scale*0.2888025183387871,scale*0.26177582214933576)]
+ice1=[(scale*0,scale*0.2,scale*0.8)]
+ice2=[(scale*0.18,scale*0.41,scale*0.41)]
 
 """ternary settings"""
 figure, d=t.figure(scale=scale)
@@ -212,6 +212,33 @@ p.axis('off')
 #        pass
 #
 #
+
+
+"""heatmap"""
+
+
+d.heatmap(data1,style="hexagonal",cmap='plasma',colorbar=True)
+#d.scatter(point1, marker='*', color='black', alpha=1, 
+#          label=r"$(\frac{1}{2},\frac{1}{2},0)$",s=50)
+#
+#d.heatmap(data2,style='hexagonal',cmap='plasma',colorbar=True)
+#d.scatter(point2, marker='*', color='black', alpha=1, 
+#          label=r"$(1,0,0)$",s=50)
+#          
+#d.heatmap(data3,style="hexagonal",cmap='plasma',colorbar=True)
+#d.scatter(point3, marker='*', color='black', alpha=1, 
+#          label=r"$(\frac{1}{3},\frac{2}{3},0)$",s=50)
+          
+#d.heatmap(data4,style="hexagonal",cmap='plasma',colorbar=True)                
+#d.scatter(point4, marker='*', color='black', alpha=1, 
+#          label=r"$(0,1,0)$",s=50)
+          
+#d.heatmap(data5,style="hexagonal",cmap='plasma',colorbar=True)
+#d.scatter(democratic,marker='+',color='black',
+#          label=r"$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$",s=100)
+#d.resize_drawing_canvas(scale=1.15)
+
+
 #d.scatter(point1, marker='D', color='#000080', alpha=1, 
 #          label=r"$(\frac{1}{2},\frac{1}{2},0)$",s=50)
 #d.scatter(point3, marker='o', color='#663399', alpha=1, 
@@ -227,29 +254,4 @@ p.axis('off')
 #d.scatter(ice1, marker='+',label='icecube 1', s=200)
 #d.scatter(ice2, marker='x',label='icecube 2', s=100)
 #d.legend()
-
-"""heatmap"""
-
-
-d.heatmap(data1,style="hexagonal",cmap='plasma',colorbar=True)
-#d.scatter(point1, marker='*', color='black', alpha=1, 
-#          label=r"$(\frac{1}{2},\frac{1}{2},0)$",s=50)
-#
-d.heatmap(data2,style='hexagonal',cmap='plasma',colorbar=None)
-#d.scatter(point2, marker='*', color='black', alpha=1, 
-#          label=r"$(1,0,0)$",s=50)
-#          
-d.heatmap(data3,style="hexagonal",cmap='plasma',colorbar=None)
-#d.scatter(point3, marker='*', color='black', alpha=1, 
-#          label=r"$(\frac{1}{3},\frac{2}{3},0)$",s=50)
-          
-d.heatmap(data4,style="hexagonal",cmap='plasma',colorbar=None)                
-#d.scatter(point4, marker='*', color='black', alpha=1, 
-#          label=r"$(0,1,0)$",s=50)
-          
-d.heatmap(data5,style="hexagonal",cmap='plasma',colorbar=None)
-#d.scatter(democratic,marker='+',color='black',
-#          label=r"$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$",s=100)
-#d.resize_drawing_canvas(scale=1.15)
-
-d.show()
+#d.show()
