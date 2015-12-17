@@ -7,7 +7,7 @@ Created on Thu Dec  3 20:09:16 2015
 import csv
 import itertools
 
-grid=400
+grid=100
 P1=[i/grid for i in range(grid+1)]
 epsilon = 0.001
 

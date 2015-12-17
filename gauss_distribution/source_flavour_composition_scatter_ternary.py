@@ -227,46 +227,49 @@ d.scatter(democratic,marker='*',color='black',
           label=r"$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$",s=50)
 d.scatter(point5, marker='d',color='#32CD32',alpha=1,
           label=r"$(\frac{2}{3},\frac{1}{3},0)$",s=50)
+d.scatter(ice1, marker='+',label='icecube 1', s=200)
+d.scatter(ice2, marker='x',label='icecube 2', s=100)
+d.legend(prop={'size':8},markerscale=0.5)
 d.legend()
 d.show()
 
 
 #
 """wriitng into files"""
-with open('110txt', 'w') as f:
-    fieldnames = ['x', 'y','z']
-    writer = csv.DictWriter(f, fieldnames=fieldnames)
-
-    writer.writeheader()
-    for i in range(len(data1)):
-        writer.writerow({'x': E110[i], 'y': M110[i],'z':T110[i]})
-with open('100.txt', 'w') as f:
-    fieldnames = ['x', 'y','z']
-    writer = csv.DictWriter(f, fieldnames=fieldnames)
-
-    writer.writeheader()
-    for i in range(len(data1)):
-        writer.writerow({'x': E100[i], 'y': M100[i],'z':T100[i]})
-with open('120.txt', 'w') as f:
-    fieldnames = ['x', 'y','z']
-    writer = csv.DictWriter(f, fieldnames=fieldnames)
-
-    writer.writeheader()
-    for i in range(len(data1)):
-        writer.writerow({'x': E120[i], 'y': M120[i],'z':T120[i]})
-with open('010.txt', 'w') as f:
-    fieldnames = ['x', 'y','z']
-    writer = csv.DictWriter(f, fieldnames=fieldnames)
-
-    writer.writeheader()
-    for i in range(len(data1)):
-        writer.writerow({'x': E010[i], 'y': M010[i],'z':T010[i]})
-
-with open('210.txt', 'w') as f:
-    fieldnames = ['x', 'y','z']
-    writer = csv.DictWriter(f, fieldnames=fieldnames)
-
-    writer.writeheader()
-    for i in range(len(data1)):
-        writer.writerow({'x': E210[i], 'y': M210[i],'z':T210[i]})   
-        
+#with open('110txt', 'w') as f:
+#    fieldnames = ['x', 'y','z']
+#    writer = csv.DictWriter(f, fieldnames=fieldnames)
+#
+#    writer.writeheader()
+#    for i in range(len(data1)):
+#        writer.writerow({'x': E110[i], 'y': M110[i],'z':T110[i]})
+#with open('100.txt', 'w') as f:
+#    fieldnames = ['x', 'y','z']
+#    writer = csv.DictWriter(f, fieldnames=fieldnames)
+#
+#    writer.writeheader()
+#    for i in range(len(data1)):
+#        writer.writerow({'x': E100[i], 'y': M100[i],'z':T100[i]})
+#with open('120.txt', 'w') as f:
+#    fieldnames = ['x', 'y','z']
+#    writer = csv.DictWriter(f, fieldnames=fieldnames)
+#
+#    writer.writeheader()
+#    for i in range(len(data1)):
+#        writer.writerow({'x': E120[i], 'y': M120[i],'z':T120[i]})
+#with open('010.txt', 'w') as f:
+#    fieldnames = ['x', 'y','z']
+#    writer = csv.DictWriter(f, fieldnames=fieldnames)
+#
+#    writer.writeheader()
+#    for i in range(len(data1)):
+#        writer.writerow({'x': E010[i], 'y': M010[i],'z':T010[i]})
+#
+#with open('210.txt', 'w') as f:
+#    fieldnames = ['x', 'y','z']
+#    writer = csv.DictWriter(f, fieldnames=fieldnames)
+#
+#    writer.writeheader()
+#    for i in range(len(data1)):
+#        writer.writerow({'x': E210[i], 'y': M210[i],'z':T210[i]})   
+#        
