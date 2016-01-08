@@ -101,7 +101,7 @@ with open('210.txt','r')as f:
 
 """binning process of obtained data"""
 Coor=len(B)
-N=len(E210)
+N=len(E110)
 
 value110=np.zeros(Coor)
 value120=np.zeros(Coor)
@@ -167,7 +167,7 @@ for i in range(Coor):
     v210.append(float(value210[i]/max(value210)))
     
 """ternary heatmap"""
-with open('heatmap110.txt', 'w') as f:
+with open('heatmap110f.txt', 'w') as f:
     fieldnames = ['x', 'y','z','w']
     writer = csv.DictWriter(f, delimiter=',',fieldnames=fieldnames)
 #    writer.writeheader()
@@ -176,7 +176,7 @@ with open('heatmap110.txt', 'w') as f:
 #            writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v110[i]})
         writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v110[i]})
             
-with open('heatmap120.txt', 'w') as f:
+with open('heatmap120f.txt', 'w') as f:
     fieldnames = ['x', 'y','z','w']
     writer = csv.DictWriter(f, delimiter=',',fieldnames=fieldnames)
 #    writer.writeheader()
@@ -185,7 +185,7 @@ with open('heatmap120.txt', 'w') as f:
 #            writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v120[i]})
         writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v120[i]})
             
-with open('heatmap100.txt', 'w') as f:
+with open('heatmap100f.txt', 'w') as f:
     fieldnames = ['x', 'y','z','w']
     writer = csv.DictWriter(f, delimiter=',',fieldnames=fieldnames)
 #    writer.writeheader()
@@ -194,7 +194,7 @@ with open('heatmap100.txt', 'w') as f:
 #            writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v100[i]})
         writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v100[i]})
             
-with open('heatmap010.txt', 'w') as f:
+with open('heatmap010f.txt', 'w') as f:
     fieldnames = ['x', 'y','z','w']
     writer = csv.DictWriter(f, delimiter=',',fieldnames=fieldnames)
 #    writer.writeheader()
@@ -203,7 +203,7 @@ with open('heatmap010.txt', 'w') as f:
 #            writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v010[i]})
         writer.writerow({'x': B[i], 'y': R[i],'z':L[i],'w':v010[i]})
             
-with open('heatmap210.txt', 'w') as f:
+with open('heatmap210f.txt', 'w') as f:
     fieldnames = ['x', 'y','z','w']
     writer = csv.DictWriter(f, delimiter=',',fieldnames=fieldnames)
 #    writer.writeheader()

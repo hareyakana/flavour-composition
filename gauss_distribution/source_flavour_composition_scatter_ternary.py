@@ -26,7 +26,7 @@ sig12up=0.78*m.pi/180.0
 sig12down=0.75*m.pi/180.0
 t12=[]
 
-T23=45.9*m.pi/180.0
+T23=45.9*m.pi/180.0 ## democratic case change back
 sig23up=3.5*m.pi/180.0
 sig23down=3.5*m.pi/180.0
 t23=[]
@@ -40,7 +40,7 @@ sig=[]
 CP=(r.uniform(-180,180))*m.pi/180.0
 
 """iteration"""
-N=20000
+N=60000
 
 """source ratio"""#keep ES+MS+TS=1
 ES110=1/2 #110
@@ -191,7 +191,7 @@ d.gridlines(multiple=0.1,color="blue",linewidth=0.8)
 
 d.set_title(r"source flavour composition $\nu_e,\nu_\mu,\nu_\tau$",fontsize=20)
 d.left_axis_label(r"$\nu_\tau$",fontsize=20,offset=0.12)
-d.right_axis_label(r"$\nu_\mu$",fontsize=20,offset=0.1)
+d.right_axis_label(r"$\nu_\mu$",fontsize=20,offset=0.12)
 d.bottom_axis_label(r"$\nu_e$",fontsize=20,offset=0.01)
 d._redraw_labels()
 
@@ -234,30 +234,30 @@ d.legend()
 d.show()
 
 
-#
+
 """wriitng into files"""
-#with open('110txt', 'w') as f:
+#with open('110x.txt', 'w') as f:
 #    fieldnames = ['x', 'y','z']
 #    writer = csv.DictWriter(f, fieldnames=fieldnames)
 #
 #    writer.writeheader()
 #    for i in range(len(data1)):
 #        writer.writerow({'x': E110[i], 'y': M110[i],'z':T110[i]})
-#with open('100.txt', 'w') as f:
+#with open('100x.txt', 'w') as f:
 #    fieldnames = ['x', 'y','z']
 #    writer = csv.DictWriter(f, fieldnames=fieldnames)
 #
 #    writer.writeheader()
 #    for i in range(len(data1)):
 #        writer.writerow({'x': E100[i], 'y': M100[i],'z':T100[i]})
-#with open('120.txt', 'w') as f:
+#with open('120x.txt', 'w') as f:
 #    fieldnames = ['x', 'y','z']
 #    writer = csv.DictWriter(f, fieldnames=fieldnames)
 #
 #    writer.writeheader()
 #    for i in range(len(data1)):
 #        writer.writerow({'x': E120[i], 'y': M120[i],'z':T120[i]})
-#with open('010.txt', 'w') as f:
+#with open('010x.txt', 'w') as f:
 #    fieldnames = ['x', 'y','z']
 #    writer = csv.DictWriter(f, fieldnames=fieldnames)
 #
@@ -265,11 +265,11 @@ d.show()
 #    for i in range(len(data1)):
 #        writer.writerow({'x': E010[i], 'y': M010[i],'z':T010[i]})
 #
-#with open('210.txt', 'w') as f:
+#with open('210x.txt', 'w') as f:
 #    fieldnames = ['x', 'y','z']
 #    writer = csv.DictWriter(f, fieldnames=fieldnames)
 #
 #    writer.writeheader()
 #    for i in range(len(data1)):
 #        writer.writerow({'x': E210[i], 'y': M210[i],'z':T210[i]})   
-#        
+        

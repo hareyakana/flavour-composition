@@ -20,7 +20,7 @@ def load_sample_heatmap_data1(filename="heatmap110_0.txt"):
     for line in handle:
         line = line.strip()
         i, j, k, v = line.split(',')
-        data[(int(scale*float(i)), int(scale*float(j)), int(scale*float(k)))] = float(v)
+        data[(round(400*float(i)), round(400*float(j)), round(400*float(k)))] = float(v)
     return data
 
 def load_sample_heatmap_data2(filename="heatmap120_0.txt"):
@@ -30,7 +30,7 @@ def load_sample_heatmap_data2(filename="heatmap120_0.txt"):
     for line in handle:
         line = line.strip()
         i, j, k, v = line.split(',')
-        data[(int(scale*float(i)), int(scale*float(j)), int(scale*float(k)))] = float(v)
+        data[(round(400*float(i)), round(400*float(j)), round(400*float(k)))] = float(v)
     return data
 
 def load_sample_heatmap_data3(filename="heatmap100_0.txt"):
@@ -40,7 +40,7 @@ def load_sample_heatmap_data3(filename="heatmap100_0.txt"):
     for line in handle:
         line = line.strip()
         i, j, k, v = line.split(',')
-        data[(int(scale*float(i)), int(scale*float(j)), int(scale*float(k)))] = float(v)
+        data[(round(400*float(i)), round(400*float(j)), round(400*float(k)))] = float(v)
     return data
 
 def load_sample_heatmap_data4(filename="heatmap010_0.txt"):
@@ -50,7 +50,7 @@ def load_sample_heatmap_data4(filename="heatmap010_0.txt"):
     for line in handle:
         line = line.strip()
         i, j, k, v = line.split(',')
-        data[(int(scale*float(i)), int(scale*float(j)), int(scale*float(k)))] = float(v)
+        data[(round(400*float(i)), round(400*float(j)), round(400*float(k)))] = float(v)
     return data
 
 def load_sample_heatmap_data5(filename="heatmap210_0.txt"):
@@ -60,7 +60,7 @@ def load_sample_heatmap_data5(filename="heatmap210_0.txt"):
     for line in handle:
         line = line.strip()
         i, j, k, v = line.split(',')
-        data[(int(scale*float(i)), int(scale*float(j)), int(scale*float(k)))] = float(v)
+        data[(round(400*float(i)), round(400*float(j)), round(400*float(k)))] = float(v)
     return data
 
 data1 = load_sample_heatmap_data1()
@@ -158,9 +158,9 @@ ice2=[(scale*0.18,scale*0.41,scale*0.41)]
 figure, d=t.figure(scale=scale)
 d.boundary(linewidth=2)
 d.gridlines(multiple=scale/10,color="blue",linewidth=0.2)
-d.set_title(r"source flavour composition:$\theta_{23}=45^o$ ",fontsize=20)
+d.set_title(r"source flavour composition:$\theta_{23}=45.9^o$ ",fontsize=20)
 d.left_axis_label(r"$\nu_\tau$",offset=0.12,fontsize=20)
-d.right_axis_label(r"$\nu_\mu$",offset=0.1,fontsize=20)
+d.right_axis_label(r"$\nu_\mu$",offset=0.12,fontsize=20)
 d.bottom_axis_label(r"$\nu_e$",offset=0,fontsize=20)
 d._redraw_labels()
 ticks = [round(i / float(10), 1) for i in range(10+1)]
@@ -215,25 +215,18 @@ p.axis('off')
 
 
 """heatmap"""
+#d.heatmap(data1,style="hexagonal",cmap='viridis',colorbar=True)
+#d.heatmap(data2,style="hexagonal",cmap='plasma',colorbar=None)
+#d.heatmap(data3,style="hexagonal",cmap='magma',colorbar=None)
+#d.heatmap(data4,style="hexagonal",cmap='plasma',colorbar=None)                
+#d.heatmap(data5,style="hexagonal",cmap='inferno',colorbar=None)
+##
+d.heatmap(data1,style="hexagonal",cmap='Blues',colorbar=True)
+d.heatmap(data2,style="hexagonal",cmap='BuGn',colorbar=None)
+d.heatmap(data3,style="hexagonal",cmap='BuPu',colorbar=None)        
+d.heatmap(data4,style="hexagonal",cmap='YlOrRd',colorbar=None)                       
+d.heatmap(data5,style="hexagonal",cmap='Oranges',colorbar=None) ##210
 
-
-d.heatmap(data1,style="dual-triangular",cmap='viridis',colorbar=True)
-#d.scatter(point1, marker='*', color='black', alpha=1, 
-#          label=r"$(\frac{1}{2},\frac{1}{2},0)$",s=50)
-#
-d.heatmap(data2,style='dual-triangular',cmap='plasma',colorbar=None)
-#d.scatter(point2, marker='*', color='black', alpha=1, 
-#          label=r"$(1,0,0)$",s=50)
-#          
-d.heatmap(data3,style="dual-triangular",cmap='magma',colorbar=None)
-#d.scatter(point3, marker='*', color='black', alpha=1, 
-#          label=r"$(\frac{1}{3},\frac{2}{3},0)$",s=50)
-          
-d.heatmap(data4,style="dual-triangular",cmap='plasma',colorbar=None)                
-#d.scatter(point4, marker='*', color='black', alpha=1, 
-#          label=r"$(0,1,0)$",s=50)
-          
-d.heatmap(data5,style="dual-triangular",cmap='inferno',colorbar=None)
 #d.scatter(democratic,marker='+',color='black',
 #          label=r"$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$",s=100)
 #d.resize_drawing_canvas(scale=1.15)
